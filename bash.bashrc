@@ -27,6 +27,7 @@ fi
 
 
 ##### CUSTOM #####
+wpr() { find "$1" -type f -exec shred -zfun 50 {} \; && rm -rf "$1" || return; }
 
 # Aliases
 alias vidres='ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 $1'
